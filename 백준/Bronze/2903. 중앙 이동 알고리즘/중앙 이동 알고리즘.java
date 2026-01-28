@@ -15,11 +15,7 @@ public class Main {
         * */
 
         int point = 0;
-
-        for (int i = 0; i < N; i++) {
-            point = (int) Math.pow(2, N) + 1;
-        }
-
+        point = (int) Math.pow(2, N) + 1;
         System.out.println(point * point);
     }
 }
