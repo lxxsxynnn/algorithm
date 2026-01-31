@@ -2,27 +2,38 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+
+    static class Member {
+        int age;
+        String name;
+
+        public Member(int age, String name) {
+            this.age = age;
+            this.name = name;
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        Object[][] members = new Object[N][2];
+        Member[] members = new Member[N];
 
         for(int i = 0; i < N; i++){
             String info = br.readLine();
             StringTokenizer st = new StringTokenizer(info);
-            members[i][0] = Integer.parseInt(st.nextToken());
-            members[i][1] = st.nextToken();
+
+            int age = Integer.parseInt(st.nextToken());
+            String name = st.nextToken();
+
+            members[i] = new Member(age, name);
         }
 
-        //Arrays.sort 사용 + 형변환(Casting)
-        Arrays.sort(members, (a, b) -> {
-            return (int)a[0] - (int)b[0];
-        });
+        Arrays.sort(members, Comparator.comparingInt(a -> a.age));
 
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < N; i++) {
-            sb.append(members[i][0]).append(" ").append(members[i][1]).append("\n");
+            sb.append(members[i].age).append(" ").append(members[i].name).append("\n");
         }
         System.out.print(sb);
     }
