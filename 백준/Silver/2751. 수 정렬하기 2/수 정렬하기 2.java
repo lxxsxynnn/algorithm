@@ -6,16 +6,20 @@ class Main{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        int[] nums = new int[N];
+        ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < N; i++) {
             String line = br.readLine();
             if(line != null) {
-                nums[i] = Integer.parseInt(line);
+                list.add(Integer.parseInt(line));
             }
         }
 
-        Arrays.sort(nums);
-        for(int num : nums) System.out.println(num);
+        Collections.sort(list);
+        
+        StringBuilder sb = new StringBuilder();
+        for(int num : list) sb.append(num + "\n");
+        
+        System.out.print(sb);
     }
 }
