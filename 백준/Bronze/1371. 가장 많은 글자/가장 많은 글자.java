@@ -5,10 +5,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] alphabet = new int[26];
 
-        int c;
-        while ((c = br.read()) != -1) {
-            if (c >= 'a' && c <= 'z') {
-                alphabet[c - 'a']++;
+        String line;
+        while ((line = br.readLine()) != null) {
+            for (int i = 0; i < line.length(); i++) {
+                char c = line.charAt(i);
+                if (c >= 'a' && c <= 'z') {
+                    alphabet[c - 'a']++;
+                }
             }
         }
 
