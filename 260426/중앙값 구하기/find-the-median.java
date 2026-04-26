@@ -7,7 +7,14 @@ public class Main {
         int B = sc.nextInt();
         int C = sc.nextInt();
 
-        if(A < B) System.out.println((B < C)? B : C);
-        else System.out.println((A < C)? A : C);
+        if (A >= B) {
+            if (B >= C) System.out.println(B);
+            else if (A >= C) System.out.println(C);
+            else System.out.println(A);
+        } else {
+            if (A >= C) System.out.println(A);
+            else if (B >= C) System.out.println(C);
+            else System.out.println(B);
+        }
     }
 }
