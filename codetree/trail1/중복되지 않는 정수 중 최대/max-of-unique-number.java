@@ -14,15 +14,15 @@ public class Main {
         }
 
         for(int i = 0; i < N; i++){
-            int cnt = 0;
+            boolean duplicated = false;
 
             for(int j = 0; j < N; j++){
-                if (nums[i] == nums[j]) {
-                    cnt++;
+                if(i != j && nums[i] == nums[j]) {
+                    duplicated = true;
                 }
             }
 
-            if(cnt == 1){
+            if(!duplicated){
                 max = Math.max(max, nums[i]);
             }
         }
