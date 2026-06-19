@@ -7,27 +7,17 @@ public class Main {
         int N = sc.nextInt();
         StringBuilder sb = new StringBuilder();
 
-        while(N-- > 0){
-            int a = sc.nextInt();
-            sb.append(a);
+        while (N-- > 0) {
+            sb.append(sc.nextInt());
 
-            if(sb.length() >= 5){
-                String str = sb.toString();
-
-                for(int i = 0; i < 5; i++){
-                    System.out.print(str.charAt(i));
-                }
-
-                sb = new StringBuilder();
-
-                for(int i = 5; i < str.length(); i++){
-                    sb.append(str.charAt(i));
-                }
-
-                System.out.println();
+            while (sb.length() >= 5) {
+                System.out.println(sb.substring(0, 5));
+                sb.delete(0, 5);
             }
         }
 
-        System.out.println(sb);
+        if (sb.length() > 0) {
+            System.out.println(sb);
+        }
     }
 }
