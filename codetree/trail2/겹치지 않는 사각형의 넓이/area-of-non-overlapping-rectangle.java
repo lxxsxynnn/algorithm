@@ -6,36 +6,20 @@ public class Main {
         int[][] arr = new int[2001][2001];
         int OFFSET = 1000;
 
-        int ax1 = sc.nextInt();
-        int ay1 = sc.nextInt();
-        int ax2 = sc.nextInt();
-        int ay2 = sc.nextInt();
+        for(int i = 0; i < 3; i++){
+            int x1 = sc.nextInt();
+            int y1 = sc.nextInt();
+            int x2 = sc.nextInt();
+            int y2 = sc.nextInt();
 
-        int bx1 = sc.nextInt();
-        int by1 = sc.nextInt();
-        int bx2 = sc.nextInt();
-        int by2 = sc.nextInt();
-
-        int mx1 = sc.nextInt();
-        int my1 = sc.nextInt();
-        int mx2 = sc.nextInt();
-        int my2 = sc.nextInt();
-
-        for(int i = ax1 + OFFSET; i < ax2 + OFFSET; i++){
-            for(int j = ay1 + OFFSET; j < ay2 + OFFSET; j++){
-                arr[i][j] = 1;
-            }
-        }
-
-        for(int i = bx1 + OFFSET; i < bx2 + OFFSET; i++){
-            for(int j = by1 + OFFSET; j < by2 + OFFSET; j++){
-                arr[i][j] = 1;
-            }
-        }
-
-        for(int i = mx1 + OFFSET; i < mx2 + OFFSET; i++){
-            for(int j = my1 + OFFSET; j < my2 + OFFSET; j++){
-                arr[i][j] = -1;
+            for(int n = x1; n < x2; n++){
+                for(int m = y1; m < y2; m++){
+                    if(i != 2){
+                        arr[n + OFFSET][m + OFFSET] = 1;
+                    } else {
+                        arr[n + OFFSET][m + OFFSET] = -1;
+                    }
+                }
             }
         }
 
