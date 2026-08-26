@@ -25,8 +25,6 @@ public class Main {
                 ny = c + dy[dir];
             }
 
-            if(i == n * m - 1) break;
-
             r = nx;
             c = ny;
         }
